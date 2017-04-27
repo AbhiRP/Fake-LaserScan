@@ -1,0 +1,7 @@
+<launch>
+
+<node pkg="laser_scan" type="laser_scan" name="laserscan_publisher"    output="screen"></node>
+<node name="rviz" pkg="rviz" type="rviz" args="-d $(find laser_scan)/rviz/laser_scan.rviz"/>
+<node pkg="tf" type="static_transform_publisher" name="base_to_laser_broadcaster" args="0.235 0 0.288 -3.142 0 0 /base_link    /laser_frame 100" />
+
+</launch>
